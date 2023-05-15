@@ -1,0 +1,38 @@
+@mixin btn-style-white {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px 20px 10px 20px;
+}
+
+@mixin hover__btn-white {
+  background-color: #636363;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+@mixin active__btn-white {
+  background-color: #3b3b3b;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
+}
+
+#jokeBtn, .btn__joke-search {
+  @include btn-style-white;
+}
+
+#jokeBtn:hover, .btn__joke-search:hover {
+  @include hover__btn-white;
+}
+
+#jokeBtn:active, .btn__joke-search:active {
+@include active__btn-white;
+}

@@ -1,0 +1,119 @@
+#jokeBtn, .btn__joke-search {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px 20px 10px 20px;
+}
+
+#jokeBtn:hover, .btn__joke-search:hover {
+  background-color: #636363;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+#jokeBtn:active, .btn__joke-search:active {
+  background-color: #3b3b3b;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
+}
+
+#searchInput {
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 35px;
+  padding: 15px 100px 15px 15px;
+}
+
+#searchInput:hover {
+  background-color: #636363;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.664);
+}
+
+#searchInput:focus {
+  border: 0;
+  background-color: #b6b6b6;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
+}
+
+#searchInput:focus::placeholder {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+#searchInput:hover::placeholder {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  max-width: 100%;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  padding-top: 55px;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.dad-img {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.joke-container {
+  padding: 40px 12px 40px 12px;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+}
+
+.joke {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.363);
+  margin: 0 auto;
+  padding: 15px 12px 15px 12px;
+  width: 80%;
+}
+
+.search-container {
+  align-items: baseline;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  padding-bottom: 30px;
+}
+
+.search-results {
+  display: grid;
+  margin: 0 auto;
+  text-align: justify;
+  width: 70%;
+}
+
+.search-results p {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.342);
+  padding: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

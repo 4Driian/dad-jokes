@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="src/img/dad.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Dad Jokes</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="img-container">
+      <img class="dad-img" src="src/img/dad.svg">
+    </div>
+  
+    <div class="joke-container">
+      <div class="joke" id="joke"></div>
+      <button id="jokeBtn" class="btn">Get Another Joke!</button>
+    </div>
+  
+    <div class="search-container">
+      <div class="search-elements">
+        <input id="searchInput" type="text" placeholder="Search">
+        <button id="searchBtn" class="btn__joke-search ">Search</button>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  
+  </div>
+  <script src="src/js/main.js"></script>
+  <script src="src/js/api.js"></script>
+</body>
+</html>
