@@ -25,6 +25,36 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
 }
 
+.arrow-back {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  text-decoration: none;
+  background-color: rgb(49, 130, 161);
+  color: #fff;
+  border: 3px solid #000;
+  font-size: 50px;
+  padding: 5px 5px 16px 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.arrow-back:hover {
+  background-color: #636363;
+  transition: all 0.2s ease;
+}
+
+.arrow-back:active {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
+  transition: all 0.1s ease;
+}
+
+#productImage {
+  height: 650px;
+  width: 650px;
+  object-fit: scale-down;
+}
+
 #searchInput {
   width: 40%;
   border: none;
@@ -92,6 +122,17 @@ body {
   width: 80%;
 }
 
+.joke a {
+  text-decoration: none;
+  color: #000;
+}
+
+.joke:hover, a:hover {
+  background-color: rgb(49, 130, 161);
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
 .search-container {
   align-items: baseline;
   background-color: #d4d4d4;
@@ -109,11 +150,74 @@ body {
   width: 70%;
 }
 
+.search-results a {
+  text-decoration: none;
+  color: #000;
+}
+
+.search-results a:hover {
+  color: #fff;
+}
+
 .search-results p {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.342);
   padding: 10px;
+}
+
+.search-results p:hover {
+  transition: all 0.2s ease;
+  background-color: rgb(49, 130, 161);
+}
+
+#productContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.product-description {
+  width: 25%;
+  margin-top: 76px;
+  margin-left: 31px;
+}
+
+.product-description h2, p {
+  text-align: start;
+}
+
+.product-description p {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.other-products select {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px 20px 10px 20px;
+}
+
+.other-products select:hover {
+  transition: all 0.5s ease-out;
+  background-color: #636363;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.other-products select:focus {
+  background-color: #636363;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

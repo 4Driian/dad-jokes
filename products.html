@@ -4,26 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Dad Jokes | PRODUCTS</title>
 </head>
 <body>
+  <a class="arrow-back" href="index.html">←</a>
   <div id="productContainer">
-    <h2 id="productTitle"></h2>
-    <img id="productImage" src="" alt="Product Image">
-    <p id="productColor"></p>
-    <p id="productPrice"></p>
-    <p id="productJoke"></p>
+    <div class="product-description">
+      <h2 id="productTitle"></h2>
+      <p id="productColor"></p>
+      <p id="productPrice"></p>
+      <p id="productJoke"></p>
+      <div class="joke-text">
+        <div class="joke-container">
+          <div class="joke" id="joke"></div>
+          <button id="jokeBtn" class="btn">Get Another Joke!</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img id="productImage" src="">
+    </div>
   </div>
 
-  <div>
+  <div class="other-products">
+    <h3>Other Products</h3> 
     <select id="productSelect"></select>
     <select id="colorSelect"></select>
-    <select id="jokeSelect"></select>
-  </div>
-
-  <div id="otherProductsContainer">
-    <h3>Other Products</h3>
-    <select id="otherProductsSelect"></select>
   </div>
 
   <script src="src/js/jokes.js"></script>

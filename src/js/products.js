@@ -179,7 +179,7 @@ const productModule = (() => {
 const UIController = (() => {
   const productSelectEl = document.getElementById('productSelect');
   const colorSelectEl = document.getElementById('colorSelect');
-  const jokeSelectEl = document.getElementById('jokeSelect');
+
 
   function initUI() {
     const products = ['Case de teléfono', 'Poster', 'Camisa', 'Almohada'];
@@ -199,7 +199,6 @@ const UIController = (() => {
 
     productSelectEl.addEventListener('change', handleProductChange);
     colorSelectEl.addEventListener('change', handleColorChange);
-    jokeSelectEl.addEventListener('change', handleJokeChange);
 
     observerModule.subscribe(productModule.initProduct);
     observerModule.subscribe(productModule.updateOtherProducts);
@@ -216,10 +215,7 @@ const UIController = (() => {
     productController.setSelectedColor(selectedColor);
   }
 
-  function handleJokeChange() {
-    const selectedJoke = jokeSelectEl.value;
-    jokeController.setSelectedJoke(selectedJoke);
-  }
+
 
   return { initUI };
 })();
