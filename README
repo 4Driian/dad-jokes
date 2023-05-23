@@ -1,9 +1,11 @@
 # Dad Jokes Generator
 
+#Actualización 1
 Este proyecto es un buscador y generador de "dad jokes" o chistes de papá. La aplicación se conecta a una API pública de chistes y permite buscar y generar chistes al azar.
 
+#Actualización 2
+El objetivo de la tarea es desarrollar una página de producto para objetos con algún chiste impreso. Esta página de producto debe implementar el patrón observer para las interacciones del usuario.
 ## Autor
-
 © Adrian Zuñiga Pérez - 2023
 
 Soy un estudiante de Desarrollo y Diseño Web
