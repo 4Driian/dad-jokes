@@ -1,4 +1,4 @@
-#jokeBtn, .btn__joke-search {
+.get-joke-btn, .btn__joke-search {
   background-color: #fff;
   border-radius: 5px;
   border: 2px solid #000;
@@ -7,7 +7,7 @@
   padding: 10px 20px 10px 20px;
 }
 
-#jokeBtn:hover, .btn__joke-search:hover {
+.get-joke-btn:hover, .btn__joke-search:hover {
   background-color: #636363;
   border-radius: 5px;
   border: 2px solid #fff;
@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-#jokeBtn:active, .btn__joke-search:active {
+.get-joke-btn:active, .btn__joke-search:active {
   background-color: #3b3b3b;
   border-radius: 5px;
   border: 2px solid #fff;

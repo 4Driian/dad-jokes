@@ -6,8 +6,18 @@ const UIModule = (() => {
   const searchResults = document.getElementById('searchResults');
 
   function renderJoke(joke) {
-    jokeEl.innerHTML = `<a href="products.html">${joke}</a>`;
+    jokeEl.innerHTML = `<a href="products.html" id="jokeLink">${joke}</a>`;
     clearSearchResults();
+  
+    const jokeLink = document.getElementById('jokeLink');
+    jokeLink.addEventListener('click', handleJokeLinkClick);
+  }
+  
+  function handleJokeLinkClick(event) {
+    event.preventDefault();
+    const selectedJoke = jokeEl.textContent;
+    jokeCtrl.setSelectedJoke(selectedJoke);
+    window.location.href = 'products.html';
   }
 
   function renderSearchResults(results) {
@@ -15,8 +25,20 @@ const UIModule = (() => {
       searchResults.innerHTML = 'No results found.';
       return;
     }
-    const html = results.map(joke => `<p><a href="products.html">${joke}</a></p>`).join('');
+    const html = results.map(joke => `<p><a href="products.html" class="joke-link">${joke}</a></p>`).join('');
     searchResults.innerHTML = html;
+  
+    const jokeLinks = document.querySelectorAll('.joke-link');
+    jokeLinks.forEach(link => {
+      link.addEventListener('click', handleJokeLinkClick);
+    });
+  }
+
+  function handleJokeLinkClick(event) {
+    event.preventDefault();
+    const selectedJoke = event.target.textContent;
+    jokeCtrl.setSelectedJoke(selectedJoke);
+    window.location.href = 'products.html';
   }
 
   function clearSearchResults() {
@@ -63,7 +85,6 @@ const jokeCtrl = (() => {
 
   function setSelectedJoke(joke) {
     selectedJoke = joke;
-    obsModule.notify();
   }
 
   return { getSelectedJoke, setSelectedJoke };
@@ -73,6 +94,7 @@ const jokesApp = (() => {
   function init() {
     jokeBtn.addEventListener('click', async () => {
       const joke = await jokesModule.getJoke();
+      jokeCtrl.setSelectedJoke(joke);
       UIModule.renderJoke(joke);
       UIModule.searchInput.value = '';
     });
@@ -90,4 +112,4 @@ const jokesApp = (() => {
   return { init };
 })();
 
-export { UIModule, jokesModule, jokesApp }
+export { UIModule, jokesModule, jokesApp, jokeCtrl };

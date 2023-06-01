@@ -1,17 +1,4 @@
-const jokeController = (() => {
-  let selectedJoke = '';
-
-  function getSelectedJoke() {
-    return selectedJoke;
-  }
-
-  function setSelectedJoke(joke) {
-    selectedJoke = joke;
-    observerModule.notify();
-  }
-
-  return { getSelectedJoke, setSelectedJoke };
-})();
+import { jokeCtrl } from './jokes.js';
 
 const productController = (() => {
   let selectedProduct = 'Case de teléfono';
@@ -53,7 +40,9 @@ const observerModule = (() => {
   }
 
   function notify() {
-    subscribers.forEach(callback => callback());
+    for (const subscriber of subscribers) {
+      subscriber();
+    }
   }
 
   return { subscribe, unsubscribe, notify };
@@ -67,6 +56,12 @@ const productModule = (() => {
   const productPriceEl = document.getElementById('productPrice');
   const productJokeEl = document.getElementById('productJoke');
   const otherProductsSelectEl = document.getElementById('otherProductsSelect');
+  const jokeEl = document.getElementById('productJoke');
+
+  function updateJoke(joke) {
+    const productJokeEl = document.getElementById('productJoke');//Solucionar el porqué no se ve reflejado en pantalla el chiste
+    productJokeEl.textContent = joke;
+  }
 
   function updateTitle(title) {
     productTitleEl.textContent = title;
@@ -100,14 +95,15 @@ const productModule = (() => {
   function initProduct() {
     const selectedProduct = productController.getSelectedProduct();
     const selectedColor = productController.getSelectedColor();
-
+  
     const imageUrl = getImageUrl(selectedProduct, selectedColor);
     const price = getPrice(selectedProduct, selectedColor);
-
+  
     updateTitle(selectedProduct);
     updateImage(imageUrl);
     updateColor(selectedColor);
     updatePrice(price);
+    updateJoke(jokeController.getSelectedJoke());
 
     const selectedJoke = jokeController.getSelectedJoke();
     updateJoke(selectedJoke);
@@ -118,7 +114,7 @@ const productModule = (() => {
     const colorKey = getColorKey(color);
     return `src/img/product-${productKey}-${colorKey}.jpg`;
   }
-
+  
   function getProductKey(product) {
     const productLower = product.toLowerCase();
     switch (productLower) {
@@ -134,7 +130,7 @@ const productModule = (() => {
         return '';
     }
   }
-
+  
   function getColorKey(color) {
     const colorLower = color.toLowerCase();
     switch (colorLower) {
@@ -150,83 +146,62 @@ const productModule = (() => {
   function getPrice(product, color) {
     const productKey = getProductKey(product);
     const colorKey = getColorKey(color);
+    const prices = {
+      case: {
+        white: 10,
+        black: 12,
+      },
+      poster: {
+        white: 5,
+        black: 7,
+      },
+      shirt: {
+        white: 15,
+        black: 18,
+      },
+      pillow: {
+        white: 8,
+        black: 9,
+      },
+    };
 
-    switch (`${productKey}-${colorKey}`) {
-      case 'case-white':
-        return 5;
-      case 'case-black':
-        return 7;
-      case 'poster-white':
-        return 3;
-      case 'poster-black':
-        return 5;
-      case 'shirt-white':
-        return 10;
-      case 'shirt-black':
-        return 13;
-      case 'pillow-white':
-        return 12;
-      case 'pillow-black':
-        return 15;
-      default:
-        return 0;
-    }
+    return prices[productKey][colorKey] || 0;
   }
 
   return { initProduct, updateOtherProducts };
 })();
 
 const UIController = (() => {
-  const productSelectEl = document.getElementById('productSelect');
-  const colorSelectEl = document.getElementById('colorSelect');
+  const productSelect = document.getElementById('productSelect');
+  const colorSelect = document.getElementById('colorSelect');
 
-
-  function initUI() {
-    const products = ['Case de teléfono', 'Poster', 'Camisa', 'Almohada'];
-    const colors = ['Blanco', 'Negro'];
-
-    products.forEach(product => {
-      const optionEl = document.createElement('option');
-      optionEl.textContent = product;
-      productSelectEl.appendChild(optionEl);
+  function init() {
+    productSelect.addEventListener('change', () => {
+      const product = productSelect.value;
+      productController.setSelectedProduct(product);
+      productModule.initProduct();
     });
 
-    colors.forEach(color => {
-      const optionEl = document.createElement('option');
-      optionEl.textContent = color;
-      colorSelectEl.appendChild(optionEl);
+    colorSelect.addEventListener('change', () => {
+      const color = colorSelect.value;
+      productController.setSelectedColor(color);
+      productModule.initProduct();
     });
-
-    productSelectEl.addEventListener('change', handleProductChange);
-    colorSelectEl.addEventListener('change', handleColorChange);
 
     observerModule.subscribe(productModule.initProduct);
-    observerModule.subscribe(productModule.updateOtherProducts);
-    observerModule.subscribe(productModule.updateJoke);
   }
 
-  function handleProductChange() {
-    const selectedProduct = productSelectEl.value;
-    productController.setSelectedProduct(selectedProduct);
-  }
-
-  function handleColorChange() {
-    const selectedColor = colorSelectEl.value;
-    productController.setSelectedColor(selectedColor);
-  }
-
-
-
-  return { initUI };
+  return { init };
 })();
 
 const app = (() => {
-  function initApp() {
-    UIController.initUI();
+  function init() {
+    UIController.init();
     productModule.initProduct();
   }
 
-  return { initApp };
+  return { init };
 })();
 
-app.initApp();
+
+export { productController, observerModule, UIController, app };

@@ -5,6 +5,11 @@ Este proyecto es un buscador y generador de "dad jokes" o chistes de papá. La a
 
 #Actualización 2
 El objetivo de la tarea es desarrollar una página de producto para objetos con algún chiste impreso. Esta página de producto debe implementar el patrón observer para las interacciones del usuario.
+
+#Actualización 3
+Corregir problemas:
+-exportación/importación
+-
 ## Autor
 © Adrian Zuñiga Pérez - 2023
 
