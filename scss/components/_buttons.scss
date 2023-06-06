@@ -37,27 +37,38 @@
 @include active__btn-white;
 }
 
-.arrow-back {
-  position: absolute;
-  top: 30px;
-  left: 70px;
-  text-decoration: none;
-  background-color: rgb(49, 130, 161);
+.add-cart-btn {
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.363);
+  padding: 15px;
+  width: 40%;
+  border: none;
+  border-radius: 7px;
+  background-color: rgb(52, 137, 170);
   color: #fff;
-  border: 3px solid #000;
-  font-size: 50px;
-  padding: 5px 5px 16px 5px;
-  border-radius: 5px;
-  text-align: center;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
-.arrow-back:hover {
-  background-color: #636363;
+.add-cart-btn:hover {
+  background-color: rgb(49, 130, 161);
   transition: all 0.2s ease;
 }
 
-.arrow-back:active {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.664);
-  transition: all 0.1s ease;
+.trash-btn {
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.363);
+  background-color: rgb(49, 130, 161);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
+.trash-btn:hover {
+  background-color: rgb(29, 78, 97);
+  color: #fff;
+}
+
+.trash-btn img { 
+  width: 25px;
 }

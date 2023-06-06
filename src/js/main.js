@@ -1,9 +1,25 @@
-import { app } from './products.js';
-import { jokesApp } from './jokes.js';
+import { getRandomJoke, searchJokes } from './modules/jokesModule.js';
+import { renderJoke, renderSearchResults, clearSearchResults, getSearchTerm } from './modules/UIModule.js';
 
+function init() {
+  const randomJokeBtn = document.getElementById('randomJokeBtn');
+  const searchBtn = document.getElementById('searchBtn');
 
-jokesApp.init();
-app.init();
+  randomJokeBtn.addEventListener('click', async () => {
+    const joke = await getRandomJoke();
+    renderJoke(joke);
+    clearSearchResults();
+  });
 
+  searchBtn.addEventListener('click', async () => {
+    const searchTerm = getSearchTerm();
+    if (searchTerm === '') {
+      clearSearchResults();
+      return;
+    }
+    const results = await searchJokes(searchTerm);
+    renderSearchResults(results);
+  });
+}
 
-//Resolver problema de importación(Si se cambia la posición de jokesApp.init y viceversa va a funcionar el que esté primero.)
+init();

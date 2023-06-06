@@ -8,10 +8,7 @@ El objetivo de la tarea es desarrollar una página de producto para objetos con 
 
 #Actualización 3
 Corregir problemas:
--exportación/importación
--Imágenes clickeables en products
--hacer el cart
--Mostrar el chiste seleccionado para agragrlo al carrito
+El objetivo de la tarea es continuar con la tienda de productos con chistes, desarrollando un carrito en el que los clientes puedan agregar y remover productos antes de la compra. Los productos deben utilizar el patrón Constructor.
 ## Autor
 © Adrian Zuñiga Pérez - 2023
 

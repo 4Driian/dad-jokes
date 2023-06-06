@@ -9,32 +9,47 @@
   <title>Dad Jokes | PRODUCTS</title>
 </head>
 <body>
-  <a class="arrow-back" href="index.html">←</a>
-  <div id="productContainer">
-    <div class="product-description">
-      <h2 id="productTitle"></h2>
-      <p id="productColor"></p>
-      <p id="productPrice"></p>
-      <p id="productJoke"></p>
-      <div class="joke-text">
-        <div class="joke-container">
-          <div class="joke" id="joke"></div>
-          <button id="jokeBtn" class="btn get-joke-btn">Get Another Joke!</button>
+  <header>
+    <nav role="navigation">
+      <div class="menu-toggle">
+        <input type="checkbox"/>
+        <span><img src="src/img/cart-white-01.svg" class="cart-toggle"></span>
+        <ul class="menu">
+          <div id="cart">
+            <div>
+              <ul id="cartItems"></ul>
+            </div>
+            <button id="clearCartBtn" class="trash-btn"><img  src="src/img/trashCan-white.svg"> Clear Cart</button>
+          </div> 
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="product-page">
+    <div class="content-page">
+      <div id="productImageContainer" class="img-container">
+        <img id="productImage" class="" src="" alt="">
+      </div>
+      <div class="product-content">
+        <h1 id="productTitle"></h1>
+        <p id="productPrice" class="product-price"></p>
+        <button id="addToCartBtn" class="add-cart-btn">Add to Cart</button>
+        <div class="random-jokes">
+          <button id="randomJokeBtn" class="btn__joke-search">Get another Joke</button>
+          <p id="selectedJoke" class="joke"></p>
         </div>
       </div>
+      <div class="product-container">
+      </div>
     </div>
-    <div>
-      <img id="productImage" src="">
+    <div id="colorContainer"></div>
+    <div id="otherProducts" class="other-products-container">
+      <h2>Choose Another Product</h2>
+      <ul id="otherProductsList"></ul>
     </div>
   </div>
-
-  <div class="other-products">
-    <h3>Other Products</h3> 
-    <select id="productSelect"></select>
-    <select id="colorSelect"></select>
-  </div>
-
-  <script type="module" src="src/js/main.js"></script>
-
+</div>
+  <script type="module" src="src/js/components/app.js"></script>
 </body>
 </html>

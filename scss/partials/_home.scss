@@ -3,6 +3,8 @@ body {
   font-weight: 400;
   max-width: 100%;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -10,11 +12,6 @@ body {
   padding-top: 55px;
   margin: 0 auto;
   width: 30%;
-}
-
-.dad-img {
-  width: 30%;
-  margin-bottom: 20px;
 }
 
 .joke-container {
@@ -51,6 +48,7 @@ body {
   justify-content: space-evenly;
   margin-top: 15px;
   padding-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .search-results {
@@ -69,14 +67,16 @@ body {
   color: #fff;
 }
 
-.search-results p {
+.search-results li {
+  margin-top: 15px;
+  list-style: none;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.342);
   padding: 10px;
 }
 
-.search-results p:hover {
+.search-results li:hover {
   transition: all 0.2s ease;
   background-color: rgb(49, 130, 161);
 }

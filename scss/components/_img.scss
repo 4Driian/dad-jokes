@@ -1,5 +1,22 @@
-#productImage {
+.img-container-dad{
+  margin: 0 auto;
+  width: 150px;
+}
+
+.img-container img {
   height: 650px;
   width: 650px;
+  object-fit:scale-down ;
+}
+
+.other-products-container img {
+  height: 450px;
+  width: 450px;
+  object-fit:scale-down ;
+}
+
+#cartItems img{
+  height: 200px;
+  width: 200px;
   object-fit:scale-down ;
 }

@@ -10,26 +10,20 @@
 </head>
 <body>
   <div class="container">
-
-    <div class="img-container">
+    <div class="img-container-dad">
       <img class="dad-img" src="src/img/dad.svg">
     </div>
-  
-    <div class="joke-container">
-      <div class="joke" id="joke"></div>
-      <button id="jokeBtn" class="btn get-joke-btn">Get Another Joke!</button>
+    <div id="jokeContainer" class="joke-container">
+      <p id="joke" class="joke"></p>
+      <button id="randomJokeBtn" class="get-joke-btn">Get another Joke</button>
     </div>
-  
-    <div class="search-container">
-      <div class="search-elements">
-        <input id="searchInput" type="text" placeholder="Search">
-        <button id="searchBtn" class="btn__joke-search ">Search</button>
-        <div class="search-results" id="searchResults"></div>
-      </div>
+    <div id="searchContainer" class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search">
+      <button id="searchBtn" class="btn__joke-search">Search</button>
+      <div id="searchResults" class="search-results"></div>
+      <ul id="joke-list"></ul>
     </div>
-  
   </div>
   <script type="module" src="src/js/main.js"></script>
-
 </body>
 </html>
